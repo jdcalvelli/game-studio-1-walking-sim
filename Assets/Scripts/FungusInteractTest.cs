@@ -7,6 +7,8 @@ using UnityEditor.UI;
 
 public class FungusInteractTest : MonoBehaviour
 {
+    public Flowchart fungusFlowchart;
+    
     public GameObject playerRef;
 
     private bool _playerIsNear;
@@ -34,7 +36,7 @@ public class FungusInteractTest : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("test");
+                fungusFlowchart.SendFungusMessage("test");
             }
         }
     }
