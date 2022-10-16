@@ -10,6 +10,7 @@ public class InteractionCheck : MonoBehaviour
 {
     
     [SerializeField] private string fungusMessage;
+    [SerializeField] private AudioSource audioSource;
     private GameManager _gameManagerReference;
 
     private void Start()
@@ -21,7 +22,7 @@ public class InteractionCheck : MonoBehaviour
     // bubble up trigger event to game manager for purpose of sending to fungus
     private void OnTriggerEnter(Collider other)
     { 
-        StartCoroutine(_gameManagerReference.sendFungusMessageOnKeyPress(fungusMessage));
+        StartCoroutine(_gameManagerReference.HandleInteraction(fungusMessage, audioSource));
     }
 
 }
