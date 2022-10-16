@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/9t5 Low Poly Subway.meta
 guid: 75d33072f2ea840e9bebb3482eb80aaa
+========
+guid: c3312c6ec05d65e4cb45fac92355677d
+>>>>>>>> main:Assets/ProBuilder Data.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

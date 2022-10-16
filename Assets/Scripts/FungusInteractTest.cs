@@ -11,6 +11,8 @@ public class FungusInteractTest : MonoBehaviour
     
     public GameObject playerRef;
 
+    public string fungusMessage;
+
     private bool _playerIsNear;
     
     // Update is called once per frame - this will have to change for performance w game manager
@@ -36,7 +38,7 @@ public class FungusInteractTest : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                fungusFlowchart.SendFungusMessage("test");
+                fungusFlowchart.SendFungusMessage(fungusMessage);
             }
         }
     }
