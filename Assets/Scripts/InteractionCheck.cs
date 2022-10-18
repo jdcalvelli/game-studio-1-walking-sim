@@ -2,9 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Fungus;
-using Unity.VisualScripting;
-using UnityEditor.UI;
 
 public class InteractionCheck : MonoBehaviour
 {
@@ -25,4 +22,9 @@ public class InteractionCheck : MonoBehaviour
         StartCoroutine(_gameManagerReference.HandleInteraction(fungusMessage, audioSource));
     }
 
+    // stop coroutines on trigger exit to prevent talking to people without being near them
+    private void OnTriggerExit(Collider other)
+    {
+        StopAllCoroutines();
+    }
 }
