@@ -9,11 +9,18 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Flowchart fungusFlowchart;
 
-    private AudioManager _audioManagerReference;
-
+    [SerializeField] private AudioManager audioManagerReference;
+    [SerializeField] private Animator UIAnimator;
+    
     private void Start()
     {
-        _audioManagerReference = FindObjectOfType<AudioManager>();
+        // testing anim on start
+        //_UIReference.GetComponent<Animator>().Play("headphoneAnim");
+    }
+
+    private void Update()
+    {
+        TriggerUIAnim("headphone");
     }
 
     // avoiding usage of update for performance enhancement
@@ -25,6 +32,16 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         fungusFlowchart.SendFungusMessage(fungusMessage);
-        _audioManagerReference.TweenVolume(audioSource);
+        audioManagerReference.TweenVolume(audioSource);
     }
+    
+    // helper functions
+    private void TriggerUIAnim(string animationState)
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            UIAnimator.SetTrigger(animationState);
+        }
+    }
+
 }
