@@ -66459,8 +66459,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fungusFlowchart: {fileID: 624655158}
-  _audioManagerReference: {fileID: 188588434}
-  _UIAnimator: {fileID: 726145462}
+  audioManagerReference: {fileID: 188588434}
+  uiAnimator: {fileID: 726145462}
 --- !u!4 &2109964752
 Transform:
   m_ObjectHideFlags: 0
