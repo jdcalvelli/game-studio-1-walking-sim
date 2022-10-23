@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private AudioManager audioManagerReference;
     [SerializeField] private Animator uiAnimator;
-    
+
+    [SerializeField] private FirstPersonDrifter firstPersonDrifter;
+    [SerializeField] private MouseLook mouseLookX;
+    [SerializeField] private MouseLook mouseLookY;
+
+
     private bool _areHeadphonesOn = true;
-    
-    private void Start()
-    {
-    }
 
     private void Update()
     {
@@ -42,8 +43,11 @@ public class GameManager : MonoBehaviour
     {
         if (_areHeadphonesOn == true)
         {
+            mouseLookX.enabled = true;
+            mouseLookY.enabled = true;
+            firstPersonDrifter.enabled = true;
+            
             uiAnimator.SetTrigger("headphone");
-            uiAnimator.SetTrigger("instruction");
 
             yield return new WaitForSeconds(1f);
             
@@ -54,6 +58,10 @@ public class GameManager : MonoBehaviour
         }
         else if (_areHeadphonesOn == false)
         {
+            mouseLookX.enabled = false;
+            mouseLookY.enabled = false;
+            firstPersonDrifter.enabled = false;
+            
             // trigger reverse animation
             uiAnimator.SetTrigger("revHeadphone");
             

@@ -37920,8 +37920,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
       propertyPath: bobbingAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
@@ -37997,6 +38013,28 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &1138006223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400010, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
+  m_PrefabInstance: {fileID: 1138006216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138006217}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a9933f332744a448082eea5c70a300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1138006224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400014, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
+  m_PrefabInstance: {fileID: 1138006216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138006217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772aa5b11b2f44377adfea31f5015913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1148072961
 Mesh:
   m_ObjectHideFlags: 0
@@ -55242,6 +55280,17 @@ Transform:
   m_Father: {fileID: 31146666}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1735277808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400012, guid: 1bc34fda2c74f47cea24fa7bc1002a94, type: 3}
+  m_PrefabInstance: {fileID: 1138006216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138006220}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a9933f332744a448082eea5c70a300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1741253127
 GameObject:
   m_ObjectHideFlags: 0
@@ -66814,6 +66863,9 @@ MonoBehaviour:
   fungusFlowchart: {fileID: 624655158}
   audioManagerReference: {fileID: 188588434}
   uiAnimator: {fileID: 726145462}
+  firstPersonDrifter: {fileID: 1138006224}
+  mouseLookX: {fileID: 1138006223}
+  mouseLookY: {fileID: 1735277808}
 --- !u!4 &2109964752
 Transform:
   m_ObjectHideFlags: 0
