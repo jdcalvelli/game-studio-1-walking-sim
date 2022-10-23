@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            TriggerUIAnim();
+            StartCoroutine(TriggerUIAnim());
         }
     }
 
@@ -38,18 +38,29 @@ public class GameManager : MonoBehaviour
     }
     
     // helper functions
-    private void TriggerUIAnim()
+    private IEnumerator TriggerUIAnim()
     {
         if (_areHeadphonesOn == true)
         {
             uiAnimator.SetTrigger("headphone");
+
+            yield return new WaitForSeconds(1f);
+            
+            audioManagerReference.TweenMixerGroupVolume("GameSoundsVol", 0f, 3f);
+            audioManagerReference.TweenMixerGroupVolume("ElevatorMusicVol", -80f, 3f);
+
             _areHeadphonesOn = false;
         }
         else if (_areHeadphonesOn == false)
         {
             // trigger reverse animation
             uiAnimator.SetTrigger("revHeadphone");
-            //TriggerUIAnim("reverse-headphone");
+            
+            yield return new WaitForSeconds(0.5f);
+
+            audioManagerReference.TweenMixerGroupVolume("GameSoundsVol", -80f, 3f);
+            audioManagerReference.TweenMixerGroupVolume("ElevatorMusicVol", 0f, 3f);
+            
             _areHeadphonesOn = true;
         }
     }
