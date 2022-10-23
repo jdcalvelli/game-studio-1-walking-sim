@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         if (_areHeadphonesOn == true)
         {
             uiAnimator.SetTrigger("headphone");
+            uiAnimator.SetTrigger("instruction");
 
             yield return new WaitForSeconds(1f);
             
