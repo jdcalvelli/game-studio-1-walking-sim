@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Fungus;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,17 +9,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Flowchart fungusFlowchart;
 
     [SerializeField] private AudioManager audioManagerReference;
-    [SerializeField] private Animator UIAnimator;
+    [SerializeField] private Animator uiAnimator;
+    
+    private bool _areHeadphonesOn = true;
     
     private void Start()
     {
-        // testing anim on start
-        //_UIReference.GetComponent<Animator>().Play("headphoneAnim");
     }
 
     private void Update()
     {
-        TriggerUIAnim("headphone");
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TriggerUIAnim();
+        }
     }
 
     // avoiding usage of update for performance enhancement
@@ -36,11 +38,19 @@ public class GameManager : MonoBehaviour
     }
     
     // helper functions
-    private void TriggerUIAnim(string animationState)
+    private void TriggerUIAnim()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (_areHeadphonesOn == true)
         {
-            UIAnimator.SetTrigger(animationState);
+            uiAnimator.SetTrigger("headphone");
+            _areHeadphonesOn = false;
+        }
+        else if (_areHeadphonesOn == false)
+        {
+            // trigger reverse animation
+            Debug.Log("reverse headphone");
+            //TriggerUIAnim("reverse-headphone");
+            _areHeadphonesOn = true;
         }
     }
 
