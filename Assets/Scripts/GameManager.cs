@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         else if (_areHeadphonesOn == false)
         {
             // trigger reverse animation
-            Debug.Log("reverse headphone");
+            uiAnimator.SetTrigger("revHeadphone");
             //TriggerUIAnim("reverse-headphone");
             _areHeadphonesOn = true;
         }
