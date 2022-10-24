@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class AudioManager : MonoBehaviour
     //on start, set all of them to play with volume 0
     //fade volume in over time function?
     //maybe we do just do the audio volume changes in fungus?
-    public List<AudioSource> audioSources;
+    [SerializeField] private List<AudioSource> audioSources;
+    [SerializeField] private AudioMixer audioMixer;
 
-    private void Start()
+        private void Start()
     {
         foreach (var variableAudioSource in audioSources)
         {
@@ -24,5 +26,10 @@ public class AudioManager : MonoBehaviour
     public void TweenVolume(AudioSource audioSource)
     {
         audioSource.DOFade(0.8f, 1f);
+    }
+
+    public void TweenMixerGroupVolume(string mixerGroup, float endValue, float duration)
+    {
+        audioMixer.DOSetFloat(mixerGroup, endValue, duration);
     }
 }
