@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Fungus;
 using UnityEngine;
+using UnityEngine.UI.Extensions;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,8 +17,65 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MouseLook mouseLookX;
     [SerializeField] private MouseLook mouseLookY;
 
+    [SerializeField] private UILineRenderer reticle;
+    public Sequence reticleAnim;
 
     private bool _areHeadphonesOn = true;
+
+    private void Start()
+    {
+        reticleAnim = DOTween.Sequence()
+            .Append(DOTween
+                .To(() => reticle.Points[1].y,
+                    x => reticle.Points[1].y = x,
+                    -30,
+                    0.5f)
+            )
+            .Join(DOTween
+                .To(() => reticle.Points[2].y,
+                    x => reticle.Points[2].y = x,
+                    30,
+                    0.5f)
+            )
+            .Append(DOTween
+                .To(() => reticle.Points[1].y,
+                    x => reticle.Points[1].y = x,
+                    0,
+                    0.5f)
+            )
+            .Join(DOTween
+                .To(() => reticle.Points[2].y,
+                    x => reticle.Points[2].y = x,
+                    0,
+                    0.5f)
+            )
+            .Append(DOTween
+                .To(() => reticle.Points[1].y,
+                    x => reticle.Points[1].y = x,
+                    30,
+                    0.5f)
+            )
+            .Join(DOTween
+                .To(() => reticle.Points[2].y,
+                    x => reticle.Points[2].y = x,
+                    -30,
+                    0.5f)
+            )
+            .Append(DOTween
+                .To(() => reticle.Points[1].y,
+                    x => reticle.Points[1].y = x,
+                    0,
+                    0.5f)
+            )
+            .Join(DOTween
+                .To(() => reticle.Points[2].y,
+                    x => reticle.Points[2].y = x,
+                    0,
+                    0.5f)
+            )
+            .SetLoops(-1, LoopType.Restart)
+            .Pause();
+    }
 
     private void Update()
     {
@@ -24,6 +83,8 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(TriggerUIAnim());
         }
+        // this is for uilinerenderer
+        reticle.SetVerticesDirty();
     }
 
     // avoiding usage of update for performance enhancement
@@ -73,5 +134,4 @@ public class GameManager : MonoBehaviour
             _areHeadphonesOn = true;
         }
     }
-
 }
