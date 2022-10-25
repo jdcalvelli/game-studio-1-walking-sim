@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16237,7 +16237,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41690
+  m_Name: pb_Mesh111452
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26788,7 +26788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &784542979
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64226,6 +64226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fungusFlowchart: {fileID: 624655158}
+  audioManagerReference: {fileID: 0}
+  uiAnimator: {fileID: 0}
 --- !u!4 &2109964752
 Transform:
   m_ObjectHideFlags: 0
