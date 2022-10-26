@@ -29,49 +29,49 @@ public class GameManager : MonoBehaviour
                 .To(() => reticle.Points[1].y,
                     x => reticle.Points[1].y = x,
                     -30,
-                    0.5f)
+                    0.25f)
             )
             .Join(DOTween
                 .To(() => reticle.Points[2].y,
                     x => reticle.Points[2].y = x,
                     30,
-                    0.5f)
+                    0.25f)
             )
             .Append(DOTween
                 .To(() => reticle.Points[1].y,
                     x => reticle.Points[1].y = x,
                     0,
-                    0.5f)
+                    0.25f)
             )
             .Join(DOTween
                 .To(() => reticle.Points[2].y,
                     x => reticle.Points[2].y = x,
                     0,
-                    0.5f)
+                    0.25f)
             )
             .Append(DOTween
                 .To(() => reticle.Points[1].y,
                     x => reticle.Points[1].y = x,
                     30,
-                    0.5f)
+                    0.25f)
             )
             .Join(DOTween
                 .To(() => reticle.Points[2].y,
                     x => reticle.Points[2].y = x,
                     -30,
-                    0.5f)
+                    0.25f)
             )
             .Append(DOTween
                 .To(() => reticle.Points[1].y,
                     x => reticle.Points[1].y = x,
                     0,
-                    0.5f)
+                    0.25f)
             )
             .Join(DOTween
                 .To(() => reticle.Points[2].y,
                     x => reticle.Points[2].y = x,
                     0,
-                    0.5f)
+                    0.25f)
             )
             .SetLoops(-1, LoopType.Restart)
             .Pause();
