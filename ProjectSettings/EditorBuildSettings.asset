@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/_MAIN-V2.unity
-    guid: 7bf0489327b504c17943a4550732c217
   - enabled: 1
     path: Assets/Scenes/BlaerSceneV3.unity
     guid: 77b2b9ed15c8bac4785c6f39090649d1
