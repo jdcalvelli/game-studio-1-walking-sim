@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     //fade volume in over time function?
     //maybe we do just do the audio volume changes in fungus?
     [SerializeField] private List<AudioSource> audioSources;
+    [SerializeField] private AudioSource trainHatSound;
     [SerializeField] private AudioMixer audioMixer;
 
         private void Start()
@@ -21,6 +22,9 @@ public class AudioManager : MonoBehaviour
         {
             variableAudioSource.PlayDelayed(1);
         }
+        
+        trainHatSound.PlayDelayed(1);
+        
     }
 
     public void TweenVolume(AudioSource audioSource)
